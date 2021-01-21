@@ -8,7 +8,7 @@ function App() {
       <Weather />
       </div>
       <footer> This was coded by Kath Escote and is {" "}
-        <a href="https://github.com/kathleenjade/react-weather-app" target="_blank">
+        <a href="https://github.com/kathleenjade/react-weather-app" target="_blank" rel="noreferrer">
         open-sourced on Github.
         </a>
       </footer>
