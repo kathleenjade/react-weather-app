@@ -4,15 +4,25 @@ import axios from 'axios';
 import Loader from 'react-loader-spinner';
 
 export default function Weather(){
-    const [ready, setReady] = useState(false);
-    const [temperature, setTemperature] = useState(null);
+    const [output, setOutput] = useState({ ready : false });
 
-    function displayResults(response) {    
-       setTemperature(response.data.main.temp);
-       setReady(true);
+    function displayResults(response) {   
+        console.log(response.data);
+       setOutput({
+           ready: true,
+           temperature: response.data.main.temp,
+           description: response.data.weather[0].description,
+           city: response.data.name,
+           feelsLike: response.data.main.feels_like,
+           humidity: response.data.main.humidity,
+           pressure: response.data.main.pressure,
+           wind: response.data.wind.speed,
+       })
+
+
     }
     
-  if (ready) {
+  if (output.ready) {
     return(
         <div className="Weather">
             <form>
@@ -33,17 +43,17 @@ export default function Weather(){
                 </div>
             </form>
             <div className="icon"> ☁️ </div>
-            <div className="temperature"> {Math.round(temperature)}° </div>
-            <div className="description text-capitalize"> rainy </div>
+            <div className="temperature"> {Math.round(output.temperature)}° </div>
+            <div className="description text-capitalize"> {output.description} </div>
            <ul>
-               <li className="city"> London </li>
+               <li className="city"> {output.city} </li>
                <li className="date"> January 20, 2021 </li>
            </ul>
            <ul>
-               <li className="feels like"> Feels like: 3° </li>
-               <li className="humidity"> Humidity: 87% </li>
-               <li className="pressure"> Pressure: 987hPa </li>
-               <li className="wind">  Wind: 8.23 m/s </li>
+               <li className="feels like"> Feels like: {Math.round(output.feelsLike)}° </li>
+               <li className="humidity"> Humidity: {output.humidity}% </li>
+               <li className="pressure"> Pressure: {output.pressure}hPa </li>
+               <li className="wind">  Wind: {output.wind} m/s </li>
            </ul>
         </div>
     )
