@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import './Weather.css';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
+import FormattedDate from './FormattedDate';
 
 export default function Weather(){
     const [output, setOutput] = useState({ ready : false });
 
     function displayResults(response) {   
-        console.log(response.data);
        setOutput({
            ready: true,
            temperature: response.data.main.temp,
            description: response.data.weather[0].description,
            city: response.data.name,
+           date: new Date(response.data.dt * 1000),
            feelsLike: response.data.main.feels_like,
            humidity: response.data.main.humidity,
            pressure: response.data.main.pressure,
@@ -47,7 +48,7 @@ export default function Weather(){
             <div className="description text-capitalize"> {output.description} </div>
            <ul>
                <li className="city"> {output.city} </li>
-               <li className="date"> January 20, 2021 </li>
+               <li className="date"> <FormattedDate date={output.date} /> </li>
            </ul>
            <ul>
                <li className="feels like"> Feels like: {Math.round(output.feelsLike)}° </li>
@@ -58,7 +59,7 @@ export default function Weather(){
         </div>
     )
   } else {
-    const city = "London";
+    const city = "Okayama";
     const apiKey = "01ccbdb64fbdc91284e6a914f1479c4a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(displayResults);  
