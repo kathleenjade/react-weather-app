@@ -3,6 +3,7 @@ import './Weather.css';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
 import WeatherInfo from './WeatherInfo';
+import WeatherForecast from './WeatherForecast';
 
 export default function Weather(props){
     const [output, setOutput] = useState({ ready : false });
@@ -59,6 +60,7 @@ export default function Weather(props){
                 </div>
             </form>
             <WeatherInfo data={output} />
+            <WeatherForecast city={output.city} />
         </div>
     )
   } else {
