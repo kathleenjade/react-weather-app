@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './WeatherForecast.css';
 import ForecastHours from './ForecastHours';
+import Loader from 'react-loader-spinner';
 
 export default function WeatherForecast(props){
      const [loaded, setLoaded] = useState(false);
@@ -22,7 +23,15 @@ export default function WeatherForecast(props){
          let apiKey = "01ccbdb64fbdc91284e6a914f1479c4a";
          let url = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
          axios.get(url).then(displayForecastResponse);
-         return "null" 
+         return (
+            <Loader
+            type="ThreeDots"
+            color="#f8f1f1"
+            height={100}
+            width={100}
+            timeout={5000} //3 secs
+         />
+         )
      }
 
     function displayForecastResponse(response){

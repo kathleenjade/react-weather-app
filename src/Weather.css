@@ -1,7 +1,13 @@
-.Weather {
-    border: 2px solid #b8bcbc;
-    border-radius: 10px;
-}
 .Weather li {
     list-style: none;
+}
+.search-bar {
+    width: 70%;
+    background-color: #f8f1f1;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px #f6f5f5;
+    border-radius: 30px;
+}
+.search-bar: focus {
+    background-color: #f6f6f6;
 }

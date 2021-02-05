@@ -48,14 +48,14 @@ export default function Weather(props){
                      type="search" 
                      placeholder="Type a city name.." 
                      className="search-bar" 
-                     autoFocus="on" 
-                     onChange={handleRequest}/> 
+                     onFocus="false"
+                     onChange={handleRequest} /> 
                 </div>
                 <div className="col-3">
                   <input 
                      type="submit" 
                      value="Search" 
-                     className="btn btn-primary w-100" />
+                     />
                 </div>
                 </div>
             </form>
@@ -68,7 +68,7 @@ export default function Weather(props){
     return (
         <Loader
         type="ThreeDots"
-        color="#00BFFF"
+        color="#f8f1f1"
         height={100}
         width={100}
         timeout={5000} //3 secs

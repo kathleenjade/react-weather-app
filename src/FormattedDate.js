@@ -18,6 +18,6 @@ export default function FormattedDate(props){
         minutes = `0${minutes}`;
     }
 return(
-   `${day}, ${hours}:${minutes}`
+   `${day}, ${hours}: ${minutes}`
 )
 }

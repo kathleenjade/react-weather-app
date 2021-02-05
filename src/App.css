@@ -1,5 +1,20 @@
 .App {
-    max-width: 560px;
+    max-width: 480px;
     display: block;
     margin: 0 auto;
+    color: #f6f5f5;
+}
+.container {
+    min-height: 92vh;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #b8bcbc;
+    border-radius: 10px;
+    background-image: url('./backgroundimages/sunset-crop.jpg');
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease-out;
+}
+.container.cool {
+    background-image: url('./backgroundimages/tree-crop.jpg');
 }
