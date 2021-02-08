@@ -1,3 +1,9 @@
+.WeatherForecast {
+    text-align: center;
+}
 .WeatherForecast canvas{
+    size: 64px;
     display: block;
+    margin: 0 auto;
+    text-align: center;
 }

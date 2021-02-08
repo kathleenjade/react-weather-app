@@ -5,16 +5,20 @@
     color: #f6f5f5;
 }
 .container {
-    min-height: 92vh;
+    min-height: 95vh;
     margin: 10px;
     padding: 10px;
     border: 2px solid #b8bcbc;
     border-radius: 10px;
-    background-image: url('./backgroundimages/sunset-crop.jpg');
+    background-image: url('./backgroundimages/warm.jpg');
     background-size: cover;
-    background-position: bottom;
+    background-position: top;
     transition: 0.4 ease-out;
 }
 .container.cool {
     background-image: url('./backgroundimages/tree-crop.jpg');
+}
+.footer {
+    font-size: 12px;
+    color: black;
 }

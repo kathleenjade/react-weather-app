@@ -12,15 +12,16 @@ export default function Weather(props){
     function displayResults(response) {   
        setOutput({
            ready: true,
-           icon: response.data.weather[0].icon,
-           temperature: response.data.main.temp,
-           description: response.data.weather[0].description,
-           city: response.data.name,
            date: new Date(response.data.dt * 1000),
+           description: response.data.weather[0].description,
            feelsLike: response.data.main.feels_like,
+           temperature: response.data.main.temp,
+           city: response.data.name,
+           country: response.data.sys.country,
+           icon: response.data.weather[0].icon,  
            humidity: response.data.main.humidity,
            pressure: response.data.main.pressure,
-           wind: response.data.wind.speed,
+           wind: response.data.wind.speed,              
        })
     }
 
@@ -42,22 +43,11 @@ export default function Weather(props){
     return(
         <div className="Weather">
             <form onSubmit={handleSubmit}>
-                <div className="row">
-                <div className="col-9">
-                  <input 
+                  <input     
                      type="search" 
-                     placeholder="Type a city name.." 
+                     placeholder="Search..." 
                      className="search-bar" 
-                     onFocus="false"
                      onChange={handleRequest} /> 
-                </div>
-                <div className="col-3">
-                  <input 
-                     type="submit" 
-                     value="Search" 
-                     />
-                </div>
-                </div>
             </form>
             <WeatherInfo data={output} />
             <WeatherForecast city={output.city} />

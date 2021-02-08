@@ -11,6 +11,7 @@
     "react": "^17.0.1",
     "react-animated-weather": "^4.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
     "react-loader-spinner": "^3.1.14",
     "react-scripts": "4.0.1",
     "react-sky": "^1.1.0",
