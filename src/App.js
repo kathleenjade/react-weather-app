@@ -7,11 +7,11 @@ function App() {
       <div className="container cool">
       <Weather defaultCity="London" />
       </div>
-      <footer> This was coded by Kath Escote and is {" "}
+      <h2> This was coded by Kath Escote and is {" "}
         <a href="https://github.com/kathleenjade/react-weather-app" target="_blank" rel="noreferrer">
         open-sourced on Github.
         </a>
-      </footer>
+      </h2>
     </div>
   );
 }
