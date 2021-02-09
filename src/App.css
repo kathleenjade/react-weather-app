@@ -1,11 +1,9 @@
 .App {
     max-width: 480px;
-    max-height: 580px;
     display: block;
     margin: 0 auto;  
 }
 .container {
-    min-height: 95vh;
     margin: 10px;
     padding: 10px;
     color: #f6f5f5;

@@ -1,5 +1,6 @@
 .WeatherForecast {
     text-align: center;
+    padding-bottom: 10px;
 }
 .WeatherForecast canvas{
     size: 64px;
