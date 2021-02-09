@@ -1,5 +1,6 @@
 .App {
     max-width: 480px;
+    max-height: 580px;
     display: block;
     margin: 0 auto;  
 }
