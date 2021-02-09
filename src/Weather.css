@@ -1,6 +1,9 @@
 .Weather li {
     list-style: none;
 }
+.Weather {
+    padding-top: 10px;
+}
 .search-bar {
     width: 60%;
     background-color: #f8f1f1;
