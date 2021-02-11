@@ -12,10 +12,11 @@
     background-image: url('./backgroundimages/warm.jpg');
     background-size: cover;
     background-position: top;
-    transition: 0.4 ease-out; 
+    transition: 0.4 ease; 
 }
 .container.cool {
     background-image: url('./backgroundimages/tree-crop.jpg');
+    transition: 0.4 ease; 
 }
 h2 {
     font-size: 12px;

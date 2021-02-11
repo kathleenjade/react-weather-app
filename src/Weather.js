@@ -10,6 +10,12 @@ export default function Weather(props){
     const [city, setCity] = useState(props.defaultCity);
 
     function displayResults(response) {   
+      if (response.data.main.temp < 16) {
+        props.setTemperatureClass("cool");
+      } else {
+        props.setTemperatureClass("");
+      }
+      
        setOutput({
            ready: true,
            date: new Date(response.data.dt * 1000),
